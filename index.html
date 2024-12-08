@@ -4,10 +4,684 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ascent - Chindcare & Kids School HTML Template</title>
+
+    <script src="https://kit.fontawesome.com/1cbbb02fe6.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./icons/style.css">
+
+    <link rel="stylesheet" href="https://ascent-tailwind.vercel.app/assets/css/animate.css">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <link rel="stylesheet" href="./css/index.css">
+    <style>
+        .--savior-overlay-transform-reset {
+  transform: none !important;
+}
+    .--savior-overlay-z-index-top {
+    z-index: 2147483643 !important;
+    }
+    .--savior-overlay-position-relative {
+    position: relative;
+    }
+    .--savior-overlay-position-static {
+    position: static !important;
+    }
+    .--savior-overlay-overflow-hidden {
+    overflow: hidden !important;
+    }
+    .--savior-overlay-overflow-x-visible {
+    overflow-x: visible !important;
+    }
+    .--savior-overlay-overflow-y-visible {
+    overflow-y: visible !important;
+    }
+    .--savior-overlay-z-index-reset {
+    z-index: auto !important;
+    }
+    .--savior-overlay-display-none {
+    display: none !important;
+    }
+    .--savior-overlay-clearfix {
+    clear: both;
+    }
+    .--savior-overlay-reset-filter {
+    filter: none !important;
+    backdrop-filter: none !important;
+    }
+    .--savior-tooltip-host {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    }
+    /*Override css styles for Twitch.tv*/
+    main.--savior-overlay-z-index-reset {
+    z-index: auto !important;
+    }
+    .modal__backdrop.--savior-overlay-z-index-reset {
+    position: static !important;
+    }
+    main.--savior-overlay-z-index-top {
+    z-index: auto !important;
+    }
+    main.--savior-overlay-z-index-top .channel-root__player-container + div,
+    main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
+    opacity: 0.1;
+    }
+    /*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
+    .--savior-backdrop {
+    position: fixed !important;
+    z-index: 2147483642 !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw !important;
+    background-color: rgba(0,0,0,0.9);
+    }
+    .--savior-overlay-twitter-video-player {
+    position: fixed;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    }
+    .--savior-overlay-z-index-reset [class*="DivSideNavContainer"],
+    .--savior-overlay-z-index-reset [class*="DivHeaderContainer"],
+    .--savior-overlay-z-index-reset [class*="DivBottomContainer"],
+    .--savior-overlay-z-index-reset [class*="DivCategoryListWrapper"],
+    .--savior-overlay-z-index-reset [data-testid="sidebarColumn"],
+    .--savior-overlay-z-index-reset header[role="banner"],
+    .--savior-overlay-z-index-reset [data-testid="cellInnerDiv"]:not(.--savior-overlay-z-index-reset),
+    .--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:first-child,
+    .--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:nth-child(3) {
+    z-index: -1 !important;
+    }
+    .--savior-overlay-z-index-reset [data-testid="cellInnerDiv"] .--savior-backdrop+div {
+    z-index: 2147483643 !important;
+    }
+    .--savior-overlay-z-index-reset [data-testid="primaryColumn"]>[aria-label="Home timeline"] {
+    z-index: 0 !important;
+    }
+    .--savior-overlay-z-index-reset#mtLayer,
+    .--savior-overlay-z-index-reset.media-layer {
+    z-index: 3000 !important;
+    }
+    .--savior-overlay-position-relative [class*="SecBar_secBar_"],
+    .--savior-overlay-position-relative .woo-box-flex [class*="Frame_top_"] {
+    z-index: 0 !important;
+    }
+    .--savior-overlay-position-relative .vue-recycle-scroller__item-view:not(.--savior-overlay-z-index-reset),
+    .--savior-overlay-position-relative .woo-panel-main[class*="BackTop_main_"],
+    .--savior-overlay-position-relative [class*="Main_side_"] {
+    z-index: -1 !important;
+    }
+    /* Fix conflict css with zingmp3 */
+    .zm-video-modal.--savior-overlay-z-index-reset {
+    position: absolute;
+    }
+    /* Dirty hack for xvideos99 */
+    #page #main.--savior-overlay-z-index-reset {
+    z-index: auto !important;
+    }
+    /* Overlay for ok.ru */
+    #vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+    overflow-y: hidden;
+    z-index: 2147483643 !important;
+    }
+    /* Fix missing controller for tv.naver.com */
+    .--savior-overlay-z-index-top.rmc_controller,
+    .--savior-overlay-z-index-top.rmc_setting_intro,
+    .--savior-overlay-z-index-top.rmc_highlight,
+    .--savior-overlay-z-index-top.rmc_control_settings {
+    z-index: 2147483644 !important;
+    }
+    /* Dirty hack for douyi.com */
+    .swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+    .swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+    display: none;
+    }
+    .videoWrap + div > div {
+    pointer-events: unset;
+    }
+    /* Dirty hack for fpt.ai */
+    .mfp-wrap.--savior-overlay-z-index-top {
+    position: relative;
+    }
+    .mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+    display: none;
+    }
+    .mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+    section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
+    z-index: -1 !important;
+    }
+    section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
+    position: relative;
+    }
+    .watching-movie #video-player.--savior-overlay-z-index-top {
+    z-index: 2147483644 !important;
+    }
+    div[class^="tiktok"].--savior-overlay-z-index-reset {
+    z-index: 2147483644 !important;
+    }
+    .--savior-lightoff-fix section:not(:has([class*="--savior-overlay-"])),
+    .--savior-lightoff-fix section.section_video ~ section {
+    z-index: -1;
+    position: relative;
+    }
+    .--savior-lightoff-fix header,
+    .--savior-lightoff-fix footer,
+    .--savior-lightoff-fix .top-header,
+    .--savior-lightoff-fix .swiper-container,
+    .--savior-lightoff-fix #to_top,
+    .--savior-lightoff-fix #button-adblock {
+    z-index: -1 !important;
+    }
+    @-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    }
+    @-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    }
+    @-o-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    }
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    }
+
+    </style>
 </head>
 <body>
-    
+    <!-- header start -->
+     <header id="header" class="sticky top-0 transition-[top] duration-300 z-40" style="top: -116px;">
+        <div id="header-container" class="absolute top-0 left-0 w-full z-40">
+            <div class="container lg:pt-5 lg:pb-5 py-6 lg:py-0 px-10 bg-background relative border-b-8 border-b-primary rounded-br-[10px] rounded-bl-[10px] shadow-md">
+                <div class="flex items-center justify-between">
+                    <a href="" class="flex items-center gap-1">
+                        <img src="https://ascent-tailwind.vercel.app/assets/images/logo.png" alt="img">
+                        <span class="font-bold text-3xl ">Ascent</span>
+                    </a>
+                    <nav class="xl:block hidden">
+                        <ul class="flex items-center gap-[25px]">
+                            <li class="leading-[164%] relative py-5 group">
+                                <a href="#" class="font-semibold text-lg font-jost group-hover:text-primary-foreground transition-all duration-500 py-5">
+                                    Home
+                                    <span>
+                                        <i class="fa-solid fa-angle-down text-sm"></i>
+                                    </span>
+                                </a>
+                                <ul class="absolute top-full z-10 bg-background shadow-sm min-w-56 transition-all duration-500 opacity-0 invisible translate-y-5 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0">
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">
+                                            Home-1
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">
+                                            Home-2
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="leading-[164%] relative group">
+                                <a href="#" class="font-semibold text-lg font-jost group-hover:text-primary-foreground transition-all duration-500">About Us</a>
+                            </li>
+                            <li class="leading-[164%] relative py-5 group">
+                                <a href="#" class=" font-semibold text-lg font-jost group-hover:text-primary-foreground transition-all duration-500">Services
+                                    <span>
+                                        <i class="fa-solid fa-angle-down text-sm"></i>
+                                    </span>
+                                </a>
+                                <ul class="absolute top-full z-10 bg-background shadow-sm min-w-56 transition-all duration-500 opacity-0 invisible translate-y-5 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0">
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">
+                                            Services
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">
+                                            Service Details
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="leading-[164%] relative py-5 group">
+                                <a href="#" class=" font-semibold text-lg font-jost group-hover:text-primary-foreground transition-all duration-500">Blog 
+                                    <span>
+                                        <i class="fa-solid fa-angle-down text-sm"></i>
+                                    </span>
+                                </a>
+                                <ul class="absolute top-full z-10 bg-background shadow-sm min-w-56 transition-all duration-500 opacity-0 invisible translate-y-5 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0">
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">Blog Details</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="leading-[164%] relative py-5 group">
+                                <a href="#" class=" font-semibold text-lg font-jost group-hover:text-primary-foreground transition-all duration-500">Page
+                                    <span>
+                                        <i class="fa-solid fa-angle-down text-sm"></i>
+                                    </span>
+                                </a>
+                                <ul class="absolute top-full z-10 bg-background shadow-sm min-w-56 transition-all duration-500 opacity-0 invisible translate-y-5 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0">
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">Service Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">Faq</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">Portfolio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class=" font-semibold font-jost hover:text-cream-foreground hover:bg-primary transition-all duration-500 py-3 px-2.5 block border-b border-b-slate-300">Contact</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="leading-[164%] relative group">
+                                <a href="#" class=" font-semibold text-lg font-jost group-hover:text-primary-foreground transition-all duration-500">Contact Us</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="block xl:hidden">
+                        <div class="fixed left-0 top-0 w-full h-full bg-black/30 invisible transition-all offcanva-overlay"></div>
+                        <nav class="bg-warm border-l-2 border-l-primary w-full max-w-md min-h-screen h-full overflow-y-auto p-7 shadow-md fixed -right-full top-0 z-50 transition-all duration-500 offcanva">
+                            <div class="flex justify-between items-center">
+                                <a href="" class="flex items-center gap-1">
+                                    <img src="https://ascent-tailwind.vercel.app/assets/images/logo.png" alt="img">
+                                    <span class="font-bold text-3xl ">Ascent</span>
+                                </a>
+                                <div class="bg-primary w-10 h-10 text-cream-foreground flex items-center justify-center rounded-[4px] left-4 offcanvaClose">
+                                    <i class="fa-solid fa-xmark text-xl"></i>
+                                </div>
+                            </div>
+                            <ul class=" mt-6">
+                                <li class="leading-[164%] relative w-full dropdown">
+                                    <a href="#" class="font-jost py-2.5 border-b border-b-slate-300 text-[#385469] flex justify-between items-center">
+                                        <span>Home</span>
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                    <ul class="max-h-0 min-w-56 w-full opacity-0 invisible transition-all duration-500 dropdown-item">
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Home-1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Home-2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="leading-[164%] relative w-full">
+                                    <a href="#" class="font-jost py-2.5 border-b border-b-slate-300 text-[#385469] flex justify-between items-center">About Us</a>
+                                </li>
+                                <li class="leading-[164%] relative w-full dropdown">
+                                    <a href="#" class="font-jost py-2.5 border-b border-b-slate-300 text-[#385469] flex justify-between items-center">
+                                        <span>Services</span>
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                    <ul class="max-h-0 min-w-56 w-full opacity-0 invisible transition-all duration-500 dropdown-item">
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Services</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Service Details</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="leading-[164%] relative w-full dropdown">
+                                    <a href="#" class="font-jost py-2.5 border-b border-b-slate-300 text-[#385469] flex justify-between items-center">
+                                        <span>Blog</span>
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                    <ul class="max-h-0 min-w-56 w-full opacity-0 invisible transition-all duration-500 dropdown-item">
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Blog</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Blog Details</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="leading-[164%] relative w-full dropdown">
+                                    <a href="#" class="font-jost py-2.5 border-b border-b-slate-300 text-[#385469] flex justify-between items-center">
+                                        <span>Page</span>
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                    <ul class="max-h-0 min-w-56 w-full opacity-0 invisible transition-all duration-500 dropdown-item">
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">About</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Services</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Service Details</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Portfolio</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Faq's</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 px-6 block border-b border-b-slate-300">Contact</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="leading-[164%] relative w-full ">
+                                    <a href="#" class="text-[#385469] font-jost hover:text-secondary-foreground transition-all duration-500 py-2.5 block border-b border-b-slate-300">Contact Us</a>
+                                </li>
+                            </ul>
+                            <div class="mt-5">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#385469]">Contact Info</h4>
+                                    <ul class="mt-5 flex flex-col gap-[15px]">
+                                        <li>
+                                            <p>
+                                                <i class="fa-solid fa-phone text-primary-foreground"></i>
+                                                <a href="" class="ml-2.5">(629) 555-0129</a>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <i class="fa-solid fa-envelope text-primary-foreground"></i>
+                                                <a href="" class="ml-2.5">info@example.com</a>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <i class="fa-solid fa-location-dot text-primary-foreground"></i>
+                                                <span class="ml-2.5">6391 Elgin St. Celina, 10299</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mt-5">
+                                    <a href="" class="bg-primary text-cream-foreground rounded-md sm:flex hidden items-center gap-2.5  btn after:bg-green">Get A Quote 
+                                        <span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <ul class="flex items-center gap-[14px] mt-6">
+                                    <li>
+                                        <a href="" class="rounded-md w-11 h-11 flex items-center justify-center text-muted-foreground bg-background hover:bg-primary transition-all duration-500">
+                                            <i class="fa-brands fa-facebook-f "></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="rounded-md w-11 h-11 flex items-center justify-center text-muted-foreground bg-background hover:bg-primary transition-all duration-500">
+                                            <i class="fa-brands fa-x-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="rounded-md w-11 h-11 flex items-center justify-center text-muted-foreground bg-background hover:bg-primary transition-all duration-500">
+                                            <i class="fa-brands fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="rounded-md w-11 h-11 flex items-center justify-center text-muted-foreground bg-background hover:bg-primary transition-all duration-500">
+                                            <i class="fa-brands fa-pinterest-p"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-6 ">
+                            <div class="ml-10 cursor-pointer search-btn">
+                                <i class="fa-solid fa-magnifying-glass text-xl " aria-hidden="true"></i>
+                            </div>
+                            <p class="h-11 w-[1px] bg-muted xl:block hidden"></p>
+                            <div>
+                                <div class="xl:flex hidden flex-col items-end cursor-pointer transition-all duration-500 offcanvaTragger">
+                                    <span class="block h-[3px] w-5 bg-muted"></span>
+                                    <span class="block h-[3px] w-7.5 bg-muted mt-2"></span>
+                                    <span class="block h-[3px] w-5 bg-muted mt-2"></span>
+                                </div>
+                                <div class="flex xl:hidden flex-col items-end cursor-pointer transition-all duration-500 offcanvaTragger">
+                                    <span class="block h-[3px] w-5 bg-muted"></span>
+                                    <span class="block h-[3px] w-7.5 bg-muted mt-2"></span>
+                                    <span class="block h-[3px] w-5 bg-muted mt-2"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="#" class="opacity-0 invisible transition-all duration-500 absolute left-0 bottom-0 w-full h-full search-form ">
+                            <input type="text" name="search" placeholder="Search here" class="w-full h-full border border-gray-400 px-10 rounded-md outline-none">
+                            <label for="search" class="absolute right-10 top-1/2 -translate-y-1/2 cursor-pointer search-close">
+                                <i class="fa-solid fa-xmark border-gray-400  text-xl"></i>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+                <div class="xl:block hidden">
+                    <div class="fixed left-0 top-0 w-full h-full bg-black/30 transition-all offcanva-overlay invisible"></div>
+                    <nav class="bg-warm border-l-2 border-l-primary w-full max-w-sm min-h-screen h-full overflow-y-auto p-7 fixed top-0 z-50 transition-all duration-500 ease-linear offcanva -right-full">
+                        <div class="flex justify-between items-center">
+                            <a href="" class="flex items-center gap-1">
+                                <img src="https://ascent-tailwind.vercel.app/assets/images/logo.png" alt="img">
+                                <span class="font-bold text-3xl ">Ascent</span>
+                            </a>
+                            <div class="bg-primary w-10 h-10 text-cream-foreground flex items-center justify-center rounded-[4px] left-4 cursor-pointer offcanvaClose">
+                                <i class="fa-solid fa-xmark text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <p>Its. sit amet, consectetur adipisicing elit. A rerum sit odit illo ducimus libero, fugiat saepe beatae ut quasi provident necessitatibus esse porro eligendi illum facilis quia.</p>
+                        </div>
+                        <div class="mt-5">
+                            <div>
+                                <h4 class="text-xl font-bold text-[#385469]">Contact Info</h4>
+                                <ul class="mt-5 flex flex-col gap-[15px]">
+                                    <li>
+                                        <p>
+                                            <i class="fa-solid fa-phone text-primary-foreground"></i>
+                                            <a href="" class="ml-2.5">(629) 555-0129</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <i class="fa-solid fa-envelope text-primary-foreground"></i>
+                                            <a href="" class="ml-2.5">info@example.com</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <i class="fa-solid fa-location-dot text-primary-foreground"></i>
+                                            <span class="ml-2.5">6391 Elgin St. Celina, 10299</span>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mt-5">
+                                <a href="" class="bg-primary text-cream-foreground rounded-md sm:flex hidden items-center gap-2.5  btn after:bg-green">Get A Quote 
+                                    <span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <ul class="flex items-center gap-[14px] mt-6">
+                                <li>
+                                    <a href="" class="rounded-md w-11 h-11 flex items-center justify-center text-muted-foreground bg-background hover:bg-primary transition-all duration-500">
+                                        <i class="fa-brands fa-facebook-f "></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="rounded-md w-11 h-11 flex items-center justify-center text-muted-foreground bg-background hover:bg-primary transition-all duration-500">
+                                        <i class="fa-brands fa-x-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="rounded-md w-11 h-11 flex items-center justify-center text-muted-foreground bg-background hover:bg-primary transition-all duration-500">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="rounded-md w-11 h-11 flex items-center justify-center text-muted-foreground bg-background hover:bg-primary transition-all duration-500">
+                                        <i class="fa-brands fa-pinterest-p"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+     </header>
+    <!-- header end -->
+    <!-- banner -->
+     <section class="lg:pb-15 pb-10">
+        <div class="banner bg-warm min-[1800px]:pt-[291px] pt-48 min-[1800px]:pb-[179px] lg:pb-32 pb-20 relative z-[1] overflow-hidden after:absolute after:bottom-0 after:left-0 after:bg-[linear-gradient(180deg,_rgba(255,255,255,0.00)_0%,_#FFF_100%)] after:w-full after:h-full after:max-h-[257px]">
+            <div class="container">
+                <div class="max-w-[633px] w-full h-full bg-[linear-gradient(180deg,_rgba(255,255,255,0.00)_0%,_#FFF_50%_rgba(255,255,255,0.00)_100%)]">
+                    <h1 class="xl:text-[70px] lg:text-6xl md:text-5xl text-4xl font-bold xl:leading-[128%] lg:leading-[125%] md:leading-[120%] wow fadeInUp">
+                        Building a Better Future through 
+                    </h1>
+                    <p class="mt-5 wow fadeInUp xl:text-inherit text-muted-foreground fadeInUp">
+                        Lorem ipsum dolor sit amet consectetur. Amet lectus mi ultricies dictum facilisis sem. Imperdiet massa turpis sit proin metus volutpat loren ipsum Lorem ipsum dolor sit amet consectetur. Amet lectus mi ultricies dictum
+                    </p>
+                    <div class="mt-10 flex items-start gap-9">
+                        <a href="" class="btn-rounded-full">Read More</a>
+                        <img src="https://ascent-tailwind.vercel.app/assets/images/shapes/arrow.png" alt="arrow">
+                    </div>
+                </div>
+            </div>
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary w-[284px] h-[284px] rounded-full opacity-30 blur-[200px]"></div>
+            <div class="absolute right-0 bottom-0 z-[-1] opacity-50 2xl:opacity-100 max-w-[580px]
+            lg:max-w-[650px] xl:max-w-[750px] min-[1800px]:max-w-full wow fadeInLeft">
+                <img src="https://ascent-tailwind.vercel.app/assets/images/banner/banner-v2-thumb.png" alt="banner background">
+            </div>
+            <div class="absolute left-10 bottom-25 z-[-1] xl:block hidden">
+                <img src="https://ascent-tailwind.vercel.app/assets/images/shapes/kite.png" alt="kite">
+            </div>
+        </div>
+     </section>
+    <!-- end banner -->
+    <!-- about -->
+     <section class="lg:pt-15 lg:pb-15 pt-10 pb-10">
+        <div class="container">
+            <div class="grid xl:grid-cols-[45%_52%] lg:grid-cols-[40%_44%] grid-cols-1 xl:justify-between gap-7.5">
+                <div>
+                    <p class="text-primary-foreground font-bubblegum-sans text-[19px] wow fadeInUp">About Us</p>
+                    <h2 class="font-bold lg:text-[32px] md:text-[28px] text-2xl lg:leading-[130%] md:leading-[120%] leading-[110%] mt-2.5 lg:max-w-[410px] wow fadeInUp">Invest in education invest in the future</h2>
+                    <p class="mt-5 wow fadeInUp">
+                        Lorem ipsum dolor sit amet consectetur. Amet lectus mi ultricies dictum facilisis sem. Imperdiet massa turpis sit proin metus volutpat loren ipsum Lorem ipsum dolor sit amet consectetur. Amet lectus mi ultricies dictum
+                    </p>
+                    <p class="mt-5 wow fadeInUp">
+                        Lorem ipsum dolor sit amet cons Amet lectus mi ultricies dictum facilisis sem Lorem ipsum dolor sit amet consectetur. Amet lectus mi ultricies
+                    </p>
+                    <div class="flex gap-8 mt-10 wow fadeInUp">
+                        <a href="" class="btn-rounded-full">Read More</a>
+                        <a href="" class="btn-rounded-full bg-transparent border-primary text-muted-foreground hover:bg-primary hover:text-cream-foreground">Contact Us</a>
+                    </div>
+                </div>
+                <div class="flex items-center lg:gap-7.5 gap-5">
+                    <div class="flex flex-col lg:gap-7.5 gap-5 w-full sm:w-auto">
+                        <div class="bg-warm border-b-4 border-green rounded-tr-[64px] rounded-tl-[64px] md:px-12.5 px-7.5 sm:py-15 py-10 flex items-center justify-center gap-10 wow fadeInLeft">
+                            <i class="icon-kindergarden text-6xl text-muted-foreground"></i>
+                            <div>
+                                <h3 class="text-[32px] font-bold leading-[130%]">20K+</h3>
+                                <p>Students</p>
+                            </div>
+                        </div>
+                        <img src="https://ascent-tailwind.vercel.app/assets/images/about/about-2.png" alt="img-1" class="wow fadeInUp">
+                    </div>
+                    <div class="hidden md:block wow fadeInDown">
+                        <img src="https://ascent-tailwind.vercel.app/assets/images/about/about-3.png" alt="img-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- end about -->
+    <!-- count -->
+     <div class="lg:pt-5 lg:pb-15 pt-10 pb-10">
+        <div class="container">
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-7.5">
+                <div class="bg-background shadow-3xl rounded-[10px] lg:pl-[70px] pr-3 pl-7.5 lg:pt-[38px] pt-5 lg:pb-12 pb-5 flex justify-center md:justify-normal items-center gap-10">
+                    <i class="icon-crayon lg:text-[120px] text-7xl text-destructive-foreground"></i>
+                    <div>
+                        <h2 class="lg:text-[70px] text-5xl font-bold leading-[117%] stroke-primary counter visible counter" data-target="1230">1230</h2>
+                        <h6 class="text-xl font-bold leading-[130%]">Team member</h6>
+                    </div>
+                </div>
+                <div class="bg-background shadow-3xl rounded-[10px] lg:pl-[70px] pr-3 pl-7.5 lg:pt-[38px] pt-5 lg:pb-12 pb-5 flex justify-center md:justify-normal items-center gap-10">
+                    <i class="icon-scissors lg:text-[120px] text-7xl text-secondary-foreground"></i>
+                    <div>
+                        <h2 class="lg:text-[70px] text-5xl font-bold leading-[117%] stroke-primary counter visible counter" data-target="210">210</h2>
+                        <h6 class="text-xl font-bold leading-[130%]">Client review</h6>
+                    </div>
+                </div>
+                <div class="bg-background shadow-3xl rounded-[10px] lg:pl-[70px] pr-3 pl-7.5 lg:pt-[38px] pt-5 lg:pb-12 pb-5 flex justify-center md:justify-normal items-center gap-10">
+                    <i class="icon-baby-cutlery lg:text-[120px] text-7xl text-primary-foreground"></i>
+                    <div>
+                        <h2 class="lg:text-[70px] text-5xl font-bold leading-[117%] stroke-primary counter visible counter" data-target="1200">1200</h2>
+                        <h6 class="text-xl font-bold leading-[130%]">Winning award</h6>
+                    </div>
+                </div>
+                <div class="bg-background shadow-3xl rounded-[10px] lg:pl-[70px] pr-3 pl-7.5 lg:pt-[38px] pt-5 lg:pb-12 pb-5 flex justify-center md:justify-normal items-center gap-10">
+                    <i class="icon-baby-body lg:text-[120px] text-7xl text-green-foreground"></i>
+                    <div>
+                        <h2 class="lg:text-[70px] text-5xl font-bold leading-[117%] stroke-primary counter visible counter" data-target="230">230</h2>
+                        <h6 class="text-xl font-bold leading-[130%]">Complete project</h6>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+     </div>
+    <!-- end count -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/jquery.countup.js"></script>
+    <script>
+        $('.counter').countUp();
+    </script>
+    <script src="https://ascent-tailwind.vercel.app/assets/js/animate.js"></script>
+    <script src="https://ascent-tailwind.vercel.app/assets/js/wow.min.js"></script>
+    <script src="https://ascent-tailwind.vercel.app/assets/js/main.js"></script>
 </body>
 </html>
